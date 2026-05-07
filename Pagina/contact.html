@@ -8,14 +8,14 @@
   <title>Contacto | C.B.T.A. 235</title>
 
   <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/favicon.jpg" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
-  <!-- Google Fonts -->
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
 
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Vendor CSS -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -33,26 +33,12 @@
     }
 
     /* =========================
-       HEADER
-    ========================= */
-
-    .header {
-      background: white;
-      box-shadow: 0 2px 15px rgba(0,0,0,0.08);
-    }
-
-    .sitename {
-      color: #198754 !important;
-      font-weight: 700;
-    }
-
-    /* =========================
-       TITULO
+       PAGE TITLE
     ========================= */
 
     .page-title {
       background: linear-gradient(135deg, #198754, #146c43);
-      padding: 90px 0;
+      padding: 100px 0;
       color: white;
       text-align: center;
     }
@@ -65,7 +51,7 @@
 
     .page-title p {
       font-size: 18px;
-      opacity: 0.9;
+      opacity: 0.95;
     }
 
     /* =========================
@@ -81,11 +67,8 @@
       border-radius: 25px;
       padding: 40px;
       box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+      height: 100%;
     }
-
-    /* =========================
-       INFO ITEMS
-    ========================= */
 
     .info-item {
       display: flex;
@@ -113,6 +96,7 @@
       justify-content: center;
       color: white;
       font-size: 24px;
+      flex-shrink: 0;
     }
 
     .info-item h3 {
@@ -129,7 +113,7 @@
     }
 
     /* =========================
-       FORMULARIO
+       FORM
     ========================= */
 
     .contact-form {
@@ -171,7 +155,7 @@
     }
 
     /* =========================
-       MAPA
+       MAP
     ========================= */
 
     .map-container iframe {
@@ -180,7 +164,7 @@
     }
 
     /* =========================
-       REDES SOCIALES
+       SOCIAL
     ========================= */
 
     .social-section {
@@ -192,13 +176,13 @@
       font-size: 32px;
       font-weight: 700;
       margin-bottom: 30px;
-      color: #0f172a;
     }
 
     .social-links {
       display: flex;
       justify-content: center;
       gap: 25px;
+      flex-wrap: wrap;
     }
 
     .social-icon {
@@ -212,23 +196,6 @@
       font-size: 30px;
       text-decoration: none;
       transition: 0.4s;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .social-icon::before {
-      content: "";
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      background: rgba(255,255,255,0.15);
-      top: -100%;
-      left: 0;
-      transition: 0.4s;
-    }
-
-    .social-icon:hover::before {
-      top: 0;
     }
 
     .social-icon:hover {
@@ -241,170 +208,242 @@
       background: linear-gradient(135deg, #1877f2, #0d47a1);
     }
 
-    .instagram {
-      background: linear-gradient(
-        135deg,
-        #f09433,
-        #e6683c,
-        #dc2743,
-        #cc2366,
-        #bc1888
-      );
+    .tiktok {
+      background: #000;
     }
-
-    .youtube {
-      background: linear-gradient(135deg, #ff0000, #b30000);
-    }
-
-/* TikTok */
-.tiktok {
-  background: #000;
-}
-
 
     /* =========================
-       FOOTER
+       MOBILE MENU FIX
     ========================= */
 
-    .footer {
-      background: #198754;
-      color: white;
-      padding: 30px 0;
-      margin-top: 80px;
-    }
+    @media (max-width: 1199px) {
 
-    .footer .credits {
-      opacity: 0.9;
+      .navmenu ul {
+        display: none;
+      }
+
+      .navmenu ul.mobile-active {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        right: 15px;
+        width: 260px;
+        background: #fff;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 0 30px rgba(0,0,0,0.12);
+        gap: 15px;
+        z-index: 999;
+      }
+
+      .navmenu ul.mobile-active li {
+        width: 100%;
+      }
+
+      .navmenu ul.mobile-active a {
+        display: block;
+        width: 100%;
+      }
+
     }
 
   </style>
 
 </head>
 
-<body>
+<body class="contact-page">
 
   <!-- HEADER -->
   <header id="header" class="header d-flex align-items-center sticky-top">
-    <div class="container-fluid container-xl d-flex align-items-center">
 
-      <a href="index.html" class="logo d-flex align-items-center me-auto text-decoration-none">
-        <h1 class="sitename m-0">C.B.T.A. 235</h1>
+    <div class="container-fluid container-xl position-relative d-flex align-items-center">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto">
+
+        <h1 class="sitename">C.B.T.A. 235</h1>
+
       </a>
 
       <nav id="navmenu" class="navmenu">
+
         <ul>
+
           <li><a href="index.html">Inicio</a></li>
           <li><a href="about.html">Conócenos</a></li>
           <li><a href="courses.html">Oferta Educativa</a></li>
           <li><a href="trainers.html">Docentes</a></li>
           <li><a href="events.html">Eventos</a></li>
           <li><a href="contact.html" class="active">Contacto</a></li>
+
         </ul>
+
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+
       </nav>
 
+      <a class="btn-getstarted" href="courses.html">Empezar</a>
+
     </div>
+
   </header>
 
-  <!-- TITULO -->
-  <section class="page-title">
-    <div class="container">
-      <h1>Contáctanos</h1>
-      <p>Estamos disponibles para ayudarte y resolver tus dudas</p>
-    </div>
-  </section>
+  <main class="main">
 
-  <!-- CONTACTO -->
-  <section class="contact">
+    <!-- TITULO -->
+    <div class="page-title">
 
-    <div class="container">
+      <div class="container">
 
-      <!-- MAPA -->
-      <div class="map-container mb-5" data-aos="fade-up">
-        <iframe
-          style="border:0; width:100%; height:400px;"
-          src="https://www.google.com/maps?q=CBTA+235+Indaparapeo+Michoacan&output=embed"
-          allowfullscreen=""
-          loading="lazy">
-        </iframe>
+        <h1>Contáctanos</h1>
+
+        <p>
+          Estamos disponibles para ayudarte y resolver tus dudas
+        </p>
+
       </div>
 
-      <div class="row g-4">
+    </div>
 
-        <!-- INFORMACION -->
-        <div class="col-lg-5">
+    <!-- CONTACTO -->
+    <section class="contact">
 
-          <div class="contact-card" data-aos="fade-right">
+      <div class="container">
 
-            <div class="info-item">
-              <i class="bi bi-geo-alt"></i>
-              <div>
-                <h3>Dirección</h3>
-                <p>Francisco I. Madero No.8</p>
-                <p>Col. Centro, Indaparapeo, Mich.</p>
-                <p>C.P. 58970</p>
+        <!-- MAPA -->
+        <div class="map-container mb-5" data-aos="fade-up">
+
+          <iframe
+            style="border:0; width:100%; height:400px;"
+            src="https://www.google.com/maps?q=CBTA+235+Indaparapeo+Michoacan&output=embed"
+            allowfullscreen=""
+            loading="lazy">
+          </iframe>
+
+        </div>
+
+        <div class="row g-4">
+
+          <!-- INFO -->
+          <div class="col-lg-5">
+
+            <div class="contact-card" data-aos="fade-right">
+
+              <div class="info-item">
+
+                <i class="bi bi-geo-alt"></i>
+
+                <div>
+                  <h3>Dirección</h3>
+                  <p>Francisco I. Madero No.8</p>
+                  <p>Col. Centro, Indaparapeo, Mich.</p>
+                  <p>C.P. 58970</p>
+                </div>
+
               </div>
+
+              <div class="info-item">
+
+                <i class="bi bi-telephone"></i>
+
+                <div>
+                  <h3>Teléfono</h3>
+                  <p>01 (451) 352-02-38</p>
+                </div>
+
+              </div>
+
+              <div class="info-item">
+
+                <i class="bi bi-envelope"></i>
+
+                <div>
+                  <h3>Correo</h3>
+                  <p>cbta235@hotmail.com</p>
+                </div>
+
+              </div>
+
+              <div class="info-item">
+
+                <i class="bi bi-clock"></i>
+
+                <div>
+                  <h3>Horario</h3>
+                  <p>Lunes a Sábado</p>
+                  <p>7:00am a 3:00pm</p>
+                </div>
+
+              </div>
+
             </div>
 
-            <div class="info-item">
-              <i class="bi bi-telephone"></i>
-              <div>
-                <h3>Teléfono</h3>
-                <p>01 (451) 352-02-38</p>
-              </div>
-            </div>
+          </div>
 
-            <div class="info-item">
-              <i class="bi bi-envelope"></i>
-              <div>
-                <h3>Correo</h3>
-                <p>cbta235@hotmail.com</p>
-              </div>
-            </div>
+          <!-- FORM -->
+          <div class="col-lg-7">
 
-            <div class="info-item">
-              <i class="bi bi-clock"></i>
-              <div>
-                <h3>Horario</h3>
-                <p>Lunes a Sábado</p>
-                <p>7:00am a 3:00pm</p>
-              </div>
+            <div class="contact-form" data-aos="fade-left">
+
+              <form>
+
+                <div class="row gy-4">
+
+                  <div class="col-md-6">
+                    <input type="text" class="form-control" placeholder="Nombre completo" required>
+                  </div>
+
+                  <div class="col-md-6">
+                    <input type="email" class="form-control" placeholder="Correo electrónico" required>
+                  </div>
+
+                  <div class="col-md-12">
+                    <textarea class="form-control" rows="7" placeholder="Escribe tu mensaje..." required></textarea>
+                  </div>
+
+                  <div class="col-md-12 text-center">
+
+                    <button type="submit">
+                      <i class="bi bi-send-fill"></i>
+                      Enviar Mensaje
+                    </button>
+
+                  </div>
+
+                </div>
+
+              </form>
+
             </div>
 
           </div>
 
         </div>
 
-        <!-- FORMULARIO -->
-        <div class="col-lg-7">
+        <!-- REDES -->
+        <div class="social-section" data-aos="zoom-in">
 
-          <div class="contact-form" data-aos="fade-left">
+          <h2>Síguenos en nuestras redes</h2>
 
-            <form action="forms/contact.php" method="post">
+          <div class="social-links">
 
-              <div class="row gy-4">
+            <a href="#" class="social-icon facebook">
+              <i class="bi bi-facebook"></i>
+            </a>
 
-                <div class="col-md-6">
-                  <input type="text" class="form-control" placeholder="Nombre completo" required>
-                </div>
+            <a href="#" class="social-icon tiktok">
 
-                <div class="col-md-6">
-                  <input type="email" class="form-control" placeholder="Correo electrónico" required>
-                </div>
+              <svg xmlns="http://www.w3.org/2000/svg"
+                   width="32"
+                   height="32"
+                   fill="white"
+                   viewBox="0 0 16 16">
 
-                <div class="col-md-12">
-                  <textarea class="form-control" rows="7" placeholder="Escribe tu mensaje..." required></textarea>
-                </div>
+                <path d="M9.5 1c.828 0 1.5.672 1.5 1.5v1.379a3.5 3.5 0 0 0 2.5 1.121V7a5.48 5.48 0 0 1-2.5-.607V10.5A4.5 4.5 0 1 1 6.5 6V8a2.5 2.5 0 1 0 2.5 2.5V1h.5z"/>
 
-                <div class="col-md-12 text-center">
-                  <button type="submit">
-                    <i class="bi bi-send-fill"></i>
-                    Enviar Mensaje
-                  </button>
-                </div>
+              </svg>
 
-              </div>
-
-            </form>
+            </a>
 
           </div>
 
@@ -412,56 +451,65 @@
 
       </div>
 
-      <!-- REDES -->
-      <div class="social-section" data-aos="zoom-in">
+    </section>
 
-  <h2>Síguenos en nuestras redes</h2>
-
-  <div class="social-links">
-
-    <!-- FACEBOOK -->
-    <a href="#" class="social-icon facebook">
-      <i class="bi bi-facebook"></i>
-    </a>
-
-     <!-- TIKTOK -->
-    <a href="#" class="social-icon tiktok">
-      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="white" viewBox="0 0 16 16">
-        <path d="M9.5 1c.828 0 1.5.672 1.5 1.5v1.379a3.5 3.5 0 0 0 2.5 1.121V7a5.48 5.48 0 0 1-2.5-.607V10.5A4.5 4.5 0 1 1 6.5 6V8a2.5 2.5 0 1 0 2.5 2.5V1h.5z"/>
-      </svg>
-    </a>
-
-  </div>
-
-</div>
-
-      </div>
-
-    </div>
-
-  </section>
+  </main>
 
   <!-- FOOTER -->
-  <footer class="footer text-center">
+  <footer id="footer" class="footer position-relative light-background">
 
-    <div class="container">
-      <p class="mb-1">
-        © C.B.T.A No. 235 - Todos los derechos reservados
+    <div class="container copyright text-center mt-4">
+
+      <p>
+        © <span>Copyright</span>
+        <strong class="px-1 sitename">C.B.T.A No. 235</strong>
+        <span>Todos los derechos reservados</span>
       </p>
 
       <div class="credits">
         Diseñado para C.B.T.A No. 235
       </div>
+
     </div>
 
   </footer>
+
+  <!-- SCROLL -->
+  <a href="#"
+     id="scroll-top"
+     class="scroll-top d-flex align-items-center justify-content-center">
+
+    <i class="bi bi-arrow-up-short"></i>
+
+  </a>
+
+  <!-- PRELOADER -->
+  <div id="preloader"></div>
 
   <!-- JS -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
 
+  <!-- MAIN JS -->
+  <script src="assets/js/main.js"></script>
+
+  <!-- MENU MOVIL -->
   <script>
+
+    const mobileToggle = document.querySelector('.mobile-nav-toggle');
+    const navMenu = document.querySelector('#navmenu ul');
+
+    mobileToggle.addEventListener('click', function () {
+
+      navMenu.classList.toggle('mobile-active');
+
+      this.classList.toggle('bi-list');
+      this.classList.toggle('bi-x');
+
+    });
+
     AOS.init();
+
   </script>
 
 </body>
