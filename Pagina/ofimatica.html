@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Técnico en Ofimática | C.B.T.A. 235</title>
+
+  <!-- Favicon -->
+  <link href="assets/img/favicon.jpg" rel="icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+
+  <!-- Main CSS -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <style>
+
+    body{
+      font-family: 'Poppins', sans-serif;
+      background: #f5f7fb;
+      color: #333;
+    }
+
+    /* HERO */
+
+    .hero{
+      background:
+      linear-gradient(rgba(0,0,0,.65), rgba(0,0,0,.65)),
+      url('assets/img/ofimatica/ofimatica-banner.jpg') center center/cover no-repeat;
+
+      padding: 140px 20px;
+      text-align: center;
+      color: white;
+    }
+
+    .hero h1{
+      font-size: 65px;
+      font-weight: 800;
+      margin-bottom: 20px;
+    }
+
+    .hero p{
+      font-size: 21px;
+      max-width: 900px;
+      margin: auto;
+      line-height: 1.8;
+    }
+
+    /* SECTION */
+
+    .section-box{
+      background: white;
+      border-radius: 25px;
+      padding: 50px;
+      margin-bottom: 40px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.08);
+      transition: .4s;
+    }
+
+    .section-box:hover{
+      transform: translateY(-5px);
+    }
+
+    .section-title{
+      color: #198754;
+      font-size: 36px;
+      font-weight: 800;
+      margin-bottom: 25px;
+    }
+
+    .section-text{
+      font-size: 17px;
+      line-height: 1.9;
+      color: #555;
+    }
+
+    /* IMAGE */
+
+    .career-img{
+      width: 100%;
+      border-radius: 25px;
+      object-fit: cover;
+      box-shadow: 0 10px 25px rgba(0,0,0,.15);
+    }
+
+    /* LIST */
+
+    .custom-list{
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .custom-list li{
+      padding: 14px 0;
+      border-bottom: 1px solid #e5e7eb;
+      font-size: 17px;
+      color: #444;
+      display: flex;
+      align-items: flex-start;
+      gap: 15px;
+    }
+
+    .custom-list li i{
+      color: #198754;
+      font-size: 22px;
+      margin-top: 2px;
+    }
+
+    /* INFO CARDS */
+
+    .info-card{
+      background: #f8fafc;
+      border-radius: 20px;
+      padding: 30px;
+      height: 100%;
+      transition: .4s;
+      border-left: 6px solid #198754;
+    }
+
+    .info-card:hover{
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,.08);
+    }
+
+    .info-card h4{
+      color: #198754;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
+    /* FOOTER */
+
+    .footer{
+      background: #111827;
+      color: white;
+      padding: 40px 0;
+      margin-top: 80px;
+    }
+
+    /* RESPONSIVE */
+
+    @media(max-width: 991px){
+
+      .hero h1{
+        font-size: 42px;
+      }
+
+      .hero p{
+        font-size: 17px;
+      }
+
+      .section-box{
+        padding: 30px;
+      }
+
+      .section-title{
+        font-size: 30px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <!-- HEADER -->
+
+  <header id="header" class="header d-flex align-items-center sticky-top">
+
+    <div class="container-fluid container-xl position-relative d-flex align-items-center">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto">
+        <h1 class="sitename">C.B.T.A. 235</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+
+        <ul>
+
+          <li>
+            <a href="index.html">Inicio</a>
+          </li>
+
+          <li>
+            <a href="about.html">Conócenos</a>
+          </li>
+
+          <li class="dropdown">
+
+            <a href="#">
+              <span>Oferta Educativa</span>
+              <i class="bi bi-chevron-down toggle-dropdown"></i>
+            </a>
+
+            <ul>
+
+              <li>
+                <a href="agropecuario.html">
+                  Técnico Agropecuario
+                </a>
+              </li>
+
+              <li>
+                <a href="ofimatica.html">
+                  Técnico en Ofimática
+                </a>
+              </li>
+
+              <li>
+                <a href="administracion.html">
+                 TÉCNICO EN ADMINISTRACIÓN PARA EL EMPRENDIMIENTO AGROPECUARIO
+                </a>
+              </li>
+
+            </ul>
+
+          </li>
+
+          <li>
+            <a href="trainers.html">Docentes</a>
+          </li>
+
+          <li>
+            <a href="events.html">Eventos</a>
+          </li>
+
+          <li>
+            <a href="contact.html">Contacto</a>
+          </li>
+
+        </ul>
+
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+
+      </nav>
+
+      <a class="btn-getstarted" href="courses.html">
+        Volver
+      </a>
+
+    </div>
+
+  </header>
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <div class="container" data-aos="zoom-in">
+
+      <h1>
+        Carrera Técnica en Ofimática
+      </h1>
+
+      <p>
+        Formación profesional enfocada en tecnologías de la información,
+        herramientas digitales, diseño web y administración de sistemas,
+        preparando estudiantes capaces de integrarse al sector laboral
+        o continuar estudios superiores.
+      </p>
+
+    </div>
+
+  </section>
+
+  <!-- MAIN -->
+
+  <main class="container py-5">
+
+    <!-- INTRODUCCION -->
+
+    <div class="section-box">
+
+      <div class="row align-items-center g-5">
+
+        <div class="col-lg-6" data-aos="fade-right">
+
+          <img src="assets/img/ofimatica/ofimatica-1.jpg"
+               class="career-img"
+               alt="Carrera Ofimática">
+
+        </div>
+
+        <div class="col-lg-6" data-aos="fade-left">
+
+          <h2 class="section-title">
+            ¿Qué es la Carrera Técnica en Ofimática?
+          </h2>
+
+          <p class="section-text">
+
+            El bachillerato tecnológico te ofrece la opción de estudiar
+            el bachillerato además de cursar una carrera técnica,
+            preparándote para continuar estudios de nivel superior
+            o incorporarte al mercado laboral en el área informática
+            y tecnológica.
+
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- COMPETENCIAS -->
+
+    <div class="section-box">
+
+      <h2 class="section-title text-center mb-5" data-aos="fade-up">
+        Competencias que desarrollarás
+      </h2>
+
+      <div class="row g-4">
+
+        <div class="col-lg-6" data-aos="zoom-in">
+
+          <div class="info-card">
+
+            <h4>
+              Documentos Digitales
+            </h4>
+
+            <p>
+              Elaborarás documentos electrónicos,
+              presentaciones y páginas web utilizando
+              herramientas digitales.
+            </p>
+
+          </div>
+
+        </div>
+
+        <div class="col-lg-6" data-aos="zoom-in">
+
+          <div class="info-card">
+
+            <h4>
+              Hardware y Software
+            </h4>
+
+            <p>
+              Instalarás y configurarás equipos de cómputo,
+              programas y sistemas operativos.
+            </p>
+
+          </div>
+
+        </div>
+
+        <div class="col-lg-6" data-aos="zoom-in">
+
+          <div class="info-card">
+
+            <h4>
+              Redes y Sistemas
+            </h4>
+
+            <p>
+              Configurarás redes de computadoras
+              y administrarás recursos informáticos.
+            </p>
+
+          </div>
+
+        </div>
+
+        <div class="col-lg-6" data-aos="zoom-in">
+
+          <div class="info-card">
+
+            <h4>
+              Bases de Datos
+            </h4>
+
+            <p>
+              Diseñarás y administrarás bases de datos
+              para el manejo eficiente de información.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- DURACION -->
+
+    <div class="section-box">
+
+      <div class="row align-items-center g-5">
+
+        <div class="col-lg-6" data-aos="fade-right">
+
+          <h2 class="section-title">
+            Duración del Bachillerato
+          </h2>
+
+          <p class="section-text">
+
+            La duración del bachillerato tecnológico es de
+            seis semestres, equivalentes a tres años.
+
+            La formación profesional inicia en segundo semestre
+            y culmina en sexto semestre.
+
+          </p>
+
+        </div>
+
+        <div class="col-lg-6" data-aos="fade-left">
+
+          <img src="assets/img/ofimatica/ofimatica-2.jpg"
+               class="career-img"
+               alt="Duración">
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- PERFIL -->
+
+    <div class="section-box">
+
+      <h2 class="section-title">
+        Gustos e intereses recomendables
+      </h2>
+
+      <ul class="custom-list">
+
+        <li>
+          <i class="bi bi-check-circle-fill"></i>
+          Interés por la tecnología y la informática.
+        </li>
+
+        <li>
+          <i class="bi bi-check-circle-fill"></i>
+          Habilidad para trabajar con computadoras.
+        </li>
+
+        <li>
+          <i class="bi bi-check-circle-fill"></i>
+          Interés en el diseño digital y páginas web.
+        </li>
+
+        <li>
+          <i class="bi bi-check-circle-fill"></i>
+          Facilidad para resolver problemas tecnológicos.
+        </li>
+
+        <li>
+          <i class="bi bi-check-circle-fill"></i>
+          Trabajo en equipo y mejora continua.
+        </li>
+
+        <li>
+          <i class="bi bi-check-circle-fill"></i>
+          Sentido de responsabilidad y organización.
+        </li>
+
+      </ul>
+
+    </div>
+
+    <!-- CAMPO LABORAL -->
+
+    <div class="section-box">
+
+      <div class="row align-items-center g-5">
+
+        <div class="col-lg-6" data-aos="fade-right">
+
+          <img src="assets/img/ofimatica/ofimatica-3.jpg"
+               class="career-img"
+               alt="Campo laboral">
+
+        </div>
+
+        <div class="col-lg-6" data-aos="fade-left">
+
+          <h2 class="section-title">
+            Campo Laboral
+          </h2>
+
+          <ul class="custom-list">
+
+            <li>
+              <i class="bi bi-briefcase-fill"></i>
+              Soporte técnico en empresas públicas y privadas.
+            </li>
+
+            <li>
+              <i class="bi bi-briefcase-fill"></i>
+              Diseño y desarrollo de páginas web.
+            </li>
+
+            <li>
+              <i class="bi bi-briefcase-fill"></i>
+              Administración de bases de datos y sistemas.
+            </li>
+
+            <li>
+              <i class="bi bi-briefcase-fill"></i>
+              Configuración de redes y mantenimiento de equipos.
+            </li>
+
+            <li>
+              <i class="bi bi-briefcase-fill"></i>
+              Auxiliar administrativo con herramientas digitales.
+            </li>
+
+          </ul>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- DOCUMENTOS -->
+
+    <div class="section-box text-center">
+
+      <h2 class="section-title">
+        Documentos que obtendrás
+      </h2>
+
+      <p class="section-text">
+
+        Al concluir tus estudios obtendrás un certificado
+        de bachillerato y un título profesional que te acreditará
+        como Técnico en Ofimática.
+
+      </p>
+
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+
+  <footer class="footer">
+
+    <div class="container text-center">
+
+      <p>
+        © <strong>C.B.T.A. No. 235</strong>
+        - Todos los derechos reservados
+      </p>
+
+      <div class="credits">
+        Diseñado para C.B.T.A. No. 235
+      </div>
+
+    </div>
+
+  </footer>
+
+  <!-- JS -->
+
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+
+  <script src="assets/js/main.js"></script>
+
+  <script>
+
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
+
+  </script>
+
+</body>
+
+</html>
