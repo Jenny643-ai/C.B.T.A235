@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Nuevo Ingreso | C.B.T.A. 235</title>
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.jpg" rel="icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+
+  <!-- jsPDF -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      background:#f5f7fb;
+      font-family:'Poppins',sans-serif;
+      overflow-x:hidden;
+    }
+
+    a{
+      text-decoration:none;
+    }
+
+    /*================================================
+      HEADER
+    ================================================*/
+
+    .header{
+      background:#fff;
+      box-shadow:0 2px 20px rgba(0,0,0,.05);
+      z-index:9999;
+    }
+
+    .header .container-xl{
+      max-width:1400px;
+    }
+
+    .logo{
+      display:flex;
+      align-items:center;
+      gap:14px;
+    }
+
+    .header-logo{
+      height:55px;
+      width:auto;
+      object-fit:contain;
+    }
+
+    .sitename{
+      color:#198754;
+      font-weight:800;
+      font-size:32px;
+      margin:0;
+      white-space:nowrap;
+    }
+
+    /*================================================
+      MENU DESKTOP
+    ================================================*/
+
+    .navmenu{
+      margin-left:auto;
+      margin-right:auto;
+    }
+
+    .navmenu ul{
+      display:flex;
+      align-items:center;
+      gap:35px;
+      list-style:none;
+      margin:0;
+      padding:0;
+    }
+
+    .navmenu ul li{
+      position:relative;
+    }
+
+    .navmenu ul li a{
+      color:#222;
+      font-weight:500;
+      transition:.3s;
+      font-size:16px;
+    }
+
+    .navmenu ul li a:hover{
+      color:#198754;
+    }
+
+    /*================================================
+      DROPDOWN
+    ================================================*/
+
+    .dropdown > a{
+      display:flex;
+      align-items:center;
+      gap:8px;
+    }
+
+    .dropdown ul{
+      position:absolute;
+      top:100%;
+      left:0;
+      background:#fff;
+      min-width:320px;
+      border-radius:20px;
+      padding:15px 0;
+      box-shadow:0 10px 30px rgba(0,0,0,.12);
+      display:flex;
+      flex-direction:column;
+      opacity:0;
+      visibility:hidden;
+      transform:translateY(15px);
+      transition:.35s;
+      z-index:999;
+      gap:0;
+    }
+
+    .dropdown:hover ul{
+      opacity:1;
+      visibility:visible;
+      transform:translateY(0);
+    }
+
+    .dropdown ul li{
+      width:100%;
+    }
+
+    .dropdown ul li a{
+      display:block;
+      width:100%;
+      padding:15px 22px;
+      color:#333;
+      font-size:15px;
+      line-height:1.5;
+    }
+
+    .dropdown ul li a:hover{
+      background:#198754;
+      color:white;
+    }
+
+    /*================================================
+      BOTON
+    ================================================*/
+
+    .btn-getstarted{
+      background:#198754;
+      color:white;
+      padding:14px 30px;
+      border-radius:50px;
+      font-weight:600;
+      transition:.3s;
+      white-space:nowrap;
+    }
+
+    .btn-getstarted:hover{
+      background:#157347;
+      color:white;
+    }
+
+    /*================================================
+      HERO
+    ================================================*/
+
+    .hero-section{
+      background:
+      linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.65)),
+      url('assets/img/about/1.jpg') center center/cover no-repeat;
+
+      padding:130px 20px;
+      text-align:center;
+      color:white;
+    }
+
+    .hero-section h1{
+      font-size:60px;
+      font-weight:800;
+      margin-bottom:20px;
+    }
+
+    .hero-section p{
+      font-size:20px;
+      max-width:900px;
+      margin:auto;
+      line-height:1.8;
+    }
+
+    /*================================================
+      FORMULARIO
+    ================================================*/
+
+    .admission-section{
+      padding:90px 0;
+    }
+
+    .form-card{
+      background:white;
+      border-radius:30px;
+      padding:50px;
+      box-shadow:0 10px 35px rgba(0,0,0,.08);
+    }
+
+    .section-title-custom{
+      text-align:center;
+      margin-bottom:50px;
+    }
+
+    .section-title-custom h2{
+      color:#198754;
+      font-size:42px;
+      font-weight:800;
+      margin-bottom:15px;
+    }
+
+    .section-title-custom p{
+      color:#555;
+      font-size:18px;
+    }
+
+    .form-label{
+      font-weight:600;
+      color:#111827;
+      margin-bottom:10px;
+    }
+
+    .form-control,
+    .form-select{
+      border-radius:15px;
+      padding:14px 18px;
+      border:1px solid #dbeafe;
+      transition:.3s;
+    }
+
+    .form-control:focus,
+    .form-select:focus{
+      border-color:#198754;
+      box-shadow:0 0 0 .2rem rgba(25,135,84,.15);
+    }
+
+    .generate-btn{
+      background:linear-gradient(135deg,#198754,#20c997);
+      color:white;
+      border:none;
+      padding:16px 35px;
+      border-radius:50px;
+      font-weight:600;
+      font-size:17px;
+      transition:.4s;
+    }
+
+    .generate-btn:hover{
+      transform:translateY(-5px);
+      box-shadow:0 10px 25px rgba(25,135,84,.3);
+    }
+
+    /*================================================
+      INFO BOX
+    ================================================*/
+
+    .info-box{
+      background:#198754;
+      color:white;
+      border-radius:25px;
+      padding:40px;
+      height:100%;
+    }
+
+    .info-box h3{
+      font-size:32px;
+      font-weight:700;
+      margin-bottom:25px;
+    }
+
+    .info-item{
+      display:flex;
+      align-items:flex-start;
+      gap:15px;
+      margin-bottom:25px;
+    }
+
+    .info-item i{
+      font-size:25px;
+    }
+
+    .info-item p{
+      margin:0;
+      line-height:1.7;
+    }
+
+    /*================================================
+      FOOTER
+    ================================================*/
+
+    .footer{
+      background:#fff;
+      padding:30px 0;
+      margin-top:40px;
+      border-top:1px solid #eee;
+    }
+
+    /*================================================
+      MOBILE BUTTON
+    ================================================*/
+
+    .mobile-nav-toggle{
+      display:none;
+    }
+
+    /*================================================
+      MOBILE
+    ================================================*/
+
+    @media(max-width:991px){
+
+      .header .container-xl{
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+        padding:14px 18px;
+      }
+
+      .header-logo{
+        height:45px;
+      }
+
+      .sitename{
+        font-size:24px;
+      }
+
+      /* HAMBURGUESA */
+
+      .mobile-nav-toggle{
+        display:block !important;
+        font-size:34px;
+        color:#198754;
+        cursor:pointer;
+        z-index:99999;
+      }
+
+      /* MENU MOBILE */
+
+      .navmenu{
+        position:fixed;
+        top:90px;
+        right:-100%;
+        width:300px;
+        background:#fff;
+        border-radius:25px;
+        padding:30px 25px;
+        transition:.4s;
+        box-shadow:0 10px 30px rgba(0,0,0,.15);
+        z-index:9999;
+      }
+
+      .navmenu.active{
+        right:20px;
+      }
+
+      .navmenu ul{
+        display:flex;
+        flex-direction:column;
+        align-items:flex-start;
+        gap:22px;
+        width:100%;
+      }
+
+      .navmenu ul li{
+        width:100%;
+      }
+
+      .navmenu ul li a{
+        display:block;
+        width:100%;
+        font-size:18px;
+      }
+
+      /* DROPDOWN MOBILE */
+
+      .dropdown ul{
+        position:static;
+        opacity:1;
+        visibility:visible;
+        transform:none;
+        display:none;
+        width:100%;
+        margin-top:15px;
+        background:#f5f5f5;
+        border-radius:15px;
+        padding:10px;
+        box-shadow:none;
+      }
+
+      .dropdown.active ul{
+        display:flex;
+        flex-direction:column;
+        gap:10px;
+      }
+
+      .dropdown ul li a{
+        padding:10px;
+        font-size:15px;
+      }
+
+      /* BOTON */
+
+      .btn-getstarted{
+        display:none;
+      }
+
+      /* HERO */
+
+      .hero-section h1{
+        font-size:42px;
+      }
+
+      .hero-section p{
+        font-size:18px;
+      }
+
+      .form-card{
+        padding:30px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <!-- HEADER -->
+
+  <header id="header" class="header d-flex align-items-center sticky-top">
+
+    <div class="container-fluid container-xl d-flex align-items-center">
+
+      <!-- LOGO -->
+
+      <a href="index.html" class="logo">
+
+        <img
+          src="assets/img/favicon.jpg"
+          alt="Logo"
+          class="header-logo">
+
+        <h1 class="sitename">
+          C.B.T.A. 235
+        </h1>
+
+      </a>
+
+      <!-- MENU -->
+
+      <nav id="navmenu" class="navmenu">
+
+        <ul>
+
+          <li>
+            <a href="index.html">Inicio</a>
+          </li>
+
+          <li>
+            <a href="about.html">Conócenos</a>
+          </li>
+
+          <li class="dropdown">
+
+            <a href="#">
+              Oferta Educativa
+              <i class="bi bi-chevron-down"></i>
+            </a>
+
+            <ul>
+
+              <li>
+                <a href="agropecuario.html">
+                  Técnico Agropecuario
+                </a>
+              </li>
+
+              <li>
+                <a href="ofimatica.html">
+                  Técnico en Ofimática
+                </a>
+              </li>
+
+              <li>
+                <a href="administracion.html">
+                  Técnico en Administración para el Emprendimiento Agropecuario
+                </a>
+              </li>
+
+            </ul>
+
+          </li>
+
+          <li>
+            <a href="NuevoIngreso.html">
+              Nuevo Ingreso
+            </a>
+          </li>
+
+          <li>
+            <a href="trainers.html">Docentes</a>
+          </li>
+
+          <li>
+            <a href="events.html">Eventos</a>
+          </li>
+
+          <li>
+            <a href="contact.html">Contacto</a>
+          </li>
+
+        </ul>
+
+      </nav>
+
+      <!-- BOTON -->
+
+      <a class="btn-getstarted" href="courses.html">
+        Empezar
+      </a>
+
+      <!-- HAMBURGUESA -->
+
+      <i class="mobile-nav-toggle bi bi-list"></i>
+
+    </div>
+
+  </header>
+
+  <!-- HERO -->
+
+  <section class="hero-section">
+
+    <div class="container" data-aos="zoom-in">
+
+      <h1>
+        Nuevo Ingreso
+      </h1>
+
+      <p>
+        Genera tu ficha de admisión en línea y forma parte
+        del C.B.T.A. No. 235.
+      </p>
+
+    </div>
+
+  </section>
+
+  <!-- FORMULARIO -->
+
+  <section class="admission-section">
+
+    <div class="container">
+
+      <div class="row g-5">
+
+        <!-- FORM -->
+
+        <div class="col-lg-8">
+
+          <div class="form-card" data-aos="fade-right">
+
+            <div class="section-title-custom">
+
+              <h2>
+                Ficha de Admisión
+              </h2>
+
+              <p>
+                Completa correctamente todos los datos solicitados.
+              </p>
+
+            </div>
+
+            <form id="admissionForm">
+
+              <div class="row g-4">
+
+                <div class="col-md-6">
+
+                  <label class="form-label">
+                    Nombre Completo
+                  </label>
+
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="nombre"
+                    required>
+
+                </div>
+
+                <div class="col-md-6">
+
+                  <label class="form-label">
+                    CURP
+                  </label>
+
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="curp"
+                    required>
+
+                </div>
+
+                <div class="col-md-6">
+
+                  <label class="form-label">
+                    Teléfono
+                  </label>
+
+                  <input
+                    type="tel"
+                    class="form-control"
+                    id="telefono"
+                    required>
+
+                </div>
+
+                <div class="col-md-6">
+
+                  <label class="form-label">
+                    Correo Electrónico
+                  </label>
+
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="correo"
+                    required>
+
+                </div>
+
+                <div class="col-md-6">
+
+                  <label class="form-label">
+                    Escuela de Procedencia
+                  </label>
+
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="escuela"
+                    required>
+
+                </div>
+
+                <div class="col-md-6">
+
+                  <label class="form-label">
+                    Carrera de Interés
+                  </label>
+
+                  <select
+                    class="form-select"
+                    id="carrera"
+                    required>
+
+                    <option value="">
+                      Selecciona una carrera
+                    </option>
+
+                    <option>
+                      Técnico Agropecuario
+                    </option>
+
+                    <option>
+                      Técnico en Ofimática
+                    </option>
+
+                    <option>
+                      Técnico en Administración para el Emprendimiento Agropecuario
+                    </option>
+
+                  </select>
+
+                </div>
+
+                <div class="col-md-12 text-center mt-4">
+
+                  <button
+                    type="submit"
+                    class="generate-btn">
+
+                    <i class="bi bi-file-earmark-pdf-fill"></i>
+                    Generar Ficha PDF
+
+                  </button>
+
+                </div>
+
+              </div>
+
+            </form>
+
+          </div>
+
+        </div>
+
+        <!-- INFO -->
+
+        <div class="col-lg-4">
+
+          <div class="info-box" data-aos="fade-left">
+
+            <h3>
+              Requisitos
+            </h3>
+
+            <div class="info-item">
+              <i class="bi bi-check-circle-fill"></i>
+              <p>Acta de nacimiento</p>
+            </div>
+
+            <div class="info-item">
+              <i class="bi bi-check-circle-fill"></i>
+              <p>CURP actualizada</p>
+            </div>
+
+            <div class="info-item">
+              <i class="bi bi-check-circle-fill"></i>
+              <p>Certificado o constancia de secundaria</p>
+            </div>
+
+            <div class="info-item">
+              <i class="bi bi-check-circle-fill"></i>
+              <p>Comprobante de domicilio</p>
+            </div>
+
+            <div class="info-item">
+              <i class="bi bi-check-circle-fill"></i>
+              <p>2 fotografías tamaño infantil</p>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer id="footer" class="footer">
+
+    <div class="container text-center">
+
+      <p>
+        © <strong class="sitename">C.B.T.A No. 235</strong>
+        - Todos los derechos reservados
+      </p>
+
+      <div class="credits">
+        Diseñado para C.B.T.A No. 235
+      </div>
+
+    </div>
+
+  </footer>
+
+  <!-- JS -->
+
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+
+  <script>
+
+    AOS.init();
+
+    // PDF
+
+    document.getElementById("admissionForm")
+    .addEventListener("submit", function(e){
+
+      e.preventDefault();
+
+      const nombre = document.getElementById("nombre").value;
+      const curp = document.getElementById("curp").value;
+      const telefono = document.getElementById("telefono").value;
+      const correo = document.getElementById("correo").value;
+      const escuela = document.getElementById("escuela").value;
+      const carrera = document.getElementById("carrera").value;
+
+      const { jsPDF } = window.jspdf;
+
+      const doc = new jsPDF();
+
+      doc.setFont("helvetica","bold");
+      doc.setFontSize(22);
+
+      doc.text("C.B.T.A. No. 235", 65, 20);
+
+      doc.setFontSize(18);
+
+      doc.text("Ficha de Admisión", 70, 35);
+
+      doc.setFont("helvetica","normal");
+      doc.setFontSize(13);
+
+      doc.text("Nombre: " + nombre, 20, 60);
+      doc.text("CURP: " + curp, 20, 75);
+      doc.text("Teléfono: " + telefono, 20, 90);
+      doc.text("Correo: " + correo, 20, 105);
+      doc.text("Escuela de Procedencia: " + escuela, 20, 120);
+      doc.text("Carrera Seleccionada: " + carrera, 20, 135);
+
+      doc.setFont("helvetica","bold");
+
+      doc.text("Presentarse con esta ficha el día del examen.", 20, 170);
+
+      doc.save("Ficha_Admision_CBTA235.pdf");
+
+    });
+
+    // MENU MOBILE
+
+    const mobileToggle = document.querySelector('.mobile-nav-toggle');
+    const navmenu = document.querySelector('#navmenu');
+
+    mobileToggle.addEventListener('click', function(){
+
+      navmenu.classList.toggle('active');
+
+      this.classList.toggle('bi-list');
+      this.classList.toggle('bi-x');
+
+    });
+
+    // DROPDOWN MOBILE
+
+    document.querySelectorAll('.dropdown > a').forEach(function(item){
+
+      item.addEventListener('click', function(e){
+
+        if(window.innerWidth < 992){
+
+          e.preventDefault();
+
+          this.parentElement.classList.toggle('active');
+
+        }
+
+      });
+
+    });
+
+  </script>
+
+</body>
+
+</html>

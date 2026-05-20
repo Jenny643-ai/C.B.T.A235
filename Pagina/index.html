@@ -90,45 +90,83 @@
     }
 
     /*====================== DROPDOWN ======================*/
-    .dropdown {
-      position: relative;
-    }
 
-    .dropdown ul {
-      position: absolute;
-      top: 45px;
-      left: 0;
-      background: white;
-      min-width: 270px;
-      border-radius: 15px;
-      padding: 15px 0;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, .10);
-      display: none;
-      flex-direction: column;
-      gap: 0;
-      z-index: 999;
-    }
+.dropdown{
+  position: relative;
+}
 
-    .dropdown:hover ul {
-      display: flex;
-    }
+/* CONTENEDOR PRINCIPAL */
+.dropdown > a{
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
 
-    .dropdown ul li {
-      width: 100%;
-    }
+/* MENU DESPLEGABLE */
+.dropdown ul{
+  position:absolute;
+  top:100%;
+  left:0;
 
-    .dropdown ul a {
-      display: block;
-      padding: 14px 25px;
-      color: #333;
-      transition: .3s;
-    }
+  background:white;
+  min-width:340px;
 
-    .dropdown ul a:hover {
-      background: #198754;
-      color: white;
-    }
+  border-radius:20px;
+  padding:15px 0;
 
+  box-shadow:0 10px 30px rgba(0,0,0,.10);
+
+  display:flex;
+  flex-direction:column;
+
+  opacity:0;
+  visibility:hidden;
+
+  transform:translateY(15px);
+
+  transition:.35s;
+
+  z-index:999;
+}
+
+/* MOSTRAR MENU */
+.dropdown:hover ul{
+  opacity:1;
+  visibility:visible;
+  transform:translateY(0);
+}
+
+/* ITEMS */
+.dropdown ul li{
+  width:100%;
+}
+
+/* LINKS */
+.dropdown ul a{
+  display:block;
+  padding:16px 25px;
+  color:#333;
+  font-size:15px;
+  line-height:1.5;
+  transition:.3s;
+}
+
+/* HOVER */
+.dropdown ul a:hover{
+  background:#198754;
+  color:white;
+}
+
+/* FLECHA */
+.dropdown i{
+  font-size:14px;
+  transition:.3s;
+}
+
+/* ROTACION */
+.dropdown:hover i{
+  transform:rotate(180deg);
+}
     /*====================== HERO ======================*/
     .hero {
       position: relative;
@@ -144,7 +182,7 @@
       inset: 0;
       background:
         linear-gradient(rgba(0, 0, 0, .72), rgba(0, 0, 0, .72)),
-        url('assets/img/hero-bg.jpg') center center/cover no-repeat;
+        url('assets/img/inicio.jpg') center center/cover no-repeat;
     }
 
     .hero .container {
@@ -347,8 +385,8 @@
 
     /*====================== FOOTER ======================*/
     .footer {
-      background: #111827;
-      color: white;
+      background: #ffffff;
+      color: rgb(24, 23, 23);
       padding: 50px 0;
     }
 
@@ -359,20 +397,89 @@
 
     .footer p,
     .footer a {
-      color: rgba(255, 255, 255, .8);
+      color: rgba(0, 0, 0, 0.8);
       text-decoration: none;
     }
 
     .social-links a {
       font-size: 20px;
       margin-right: 15px;
-      color: white;
+      color: rgb(0, 0, 0);
       transition: .3s;
     }
 
     .social-links a:hover {
       color: #198754;
     }
+
+    /*====================== LOGOS HEADER ======================*/
+
+.header .container-xl{
+  max-width: 1650px;
+}
+
+.logo-container{
+  display:flex;
+  align-items:center;
+  gap:18px;
+  min-width: 320px;
+}
+
+.header-logo{
+  height:75px;
+  width:auto;
+  object-fit:contain;
+}
+
+.sitename{
+  color:#198754;
+  font-weight:800;
+  font-size:32px;
+  margin:0;
+  white-space:nowrap;
+}
+
+.navmenu{
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.navmenu ul{
+  display:flex;
+  align-items:center;
+  gap:35px;
+  list-style:none;
+  margin:0;
+  padding:0;
+}
+
+.navmenu ul li{
+  position:relative;
+}
+
+.btn-careers-container{
+  display:flex;
+  align-items:center;
+  gap:20px;
+}
+
+.btn-getstarted{
+  background:#198754;
+  color:white;
+  padding:14px 30px;
+  border-radius:50px;
+  text-decoration:none;
+  font-weight:600;
+  transition:.3s;
+  white-space:nowrap;
+}
+
+.dgeta-logo{
+  height:90px;
+  width:auto;
+  object-fit:contain;
+}
+
 
     /*====================== MOBILE MENU ======================*/
     .mobile-nav-toggle {
@@ -383,6 +490,42 @@
     }
 
     @media(max-width:991px) {
+      /*====================== LOGOS HEADER ======================*/
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.header-logo {
+  height: 70px;
+  width: auto;
+  object-fit: contain;
+}
+
+.btn-careers-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.dgeta-logo {
+  height: 85px;
+  width: auto;
+  object-fit: contain;
+}
+
+.container-xl {
+  max-width: 1550px;
+}
+.header-logo {
+  height: 45px;
+}
+
+.dgeta-logo {
+  height: 55px;
+}
 
       .mobile-nav-toggle {
         display: block;
@@ -450,74 +593,115 @@
 <body>
 
   <!-- HEADER -->
-  <header id="header" class="header sticky-top">
-    <div class="container-fluid container-xl d-flex align-items-center justify-content-between py-3">
+<header id="header" class="header sticky-top">
+
+  <div class="container-fluid container-xl d-flex align-items-center justify-content-between py-3">
+
+    <!-- LOGO SEP + CBTA -->
+    <div class="logo-container">
+
+      <img
+        src="assets/img/favicon.jpg"
+        alt="SEP"
+        class="header-logo">
 
       <a href="index.html" class="logo text-decoration-none">
         <h1 class="sitename">C.B.T.A. 235</h1>
       </a>
 
-      <nav id="navmenu" class="navmenu">
-        <ul>
+    </div>
 
-          <li>
-            <a href="index.html" class="active">Inicio</a>
-          </li>
+    <!-- MENU -->
+    <nav id="navmenu" class="navmenu">
 
-          <li>
-            <a href="about.html">Conócenos</a>
-          </li>
+  <ul>
 
-          <li class="dropdown">
-            <a href="#">
-              Oferta Educativa
-              <i class="bi bi-chevron-down"></i>
-            </a>
+    <li>
+      <a href="index.html" class="active">
+        Inicio
+      </a>
+    </li>
 
-            <ul>
-              <li>
-                <a href="agropecuario.html">
-                  Técnico Agropecuario
-                </a>
-              </li>
+    <li>
+      <a href="about.html">
+        Conócenos
+      </a>
+    </li>
 
-              <li>
-                <a href="ofimatica.html">
-                  Técnico en Ofimática
-                </a>
-              </li>
+    <li class="dropdown">
 
-              <li>
-                <a href="administracion.html">
-                  TÉCNICO EN ADMINISTRACIÓN PARA EL EMPRENDIMIENTO AGROPECUARIO
-                </a>
-              </li>
-            </ul>
-          </li>
+      <a href="#">
+        Oferta Educativa
+        <i class="bi bi-chevron-down"></i>
+      </a>
 
-          <li>
-            <a href="trainers.html">Docentes</a>
-          </li>
+      <ul>
 
-          <li>
-            <a href="events.html">Eventos</a>
-          </li>
+        <li>
+          <a href="agropecuario.html">
+            Técnico Agropecuario
+          </a>
+        </li>
 
-          <li>
-            <a href="contact.html">Contacto</a>
-          </li>
+        <li>
+          <a href="ofimatica.html">
+            Técnico en Ofimática
+          </a>
+        </li>
 
-        </ul>
-      </nav>
+        <li>
+          <a href="administracion.html">
+            Técnico en Administración para el Emprendimiento Agropecuario
+          </a>
+        </li>
 
-      <i class="mobile-nav-toggle bi bi-list"></i>
+      </ul>
 
-      <a href="courses.html" class="btn-getstarted d-none d-lg-inline-block">
+    </li>
+
+    <li>
+      <a href="NuevoIngreso.html">
+        Nuevo Ingreso
+      </a>
+    </li>
+
+    <li>
+      <a href="trainers.html">
+        Docentes
+      </a>
+    </li>
+
+    <li>
+      <a href="events.html">
+        Eventos
+      </a>
+    </li>
+
+    <li>
+      <a href="contact.html">
+        Contacto
+      </a>
+    </li>
+
+  </ul>
+
+</nav>
+    <!-- BOTON + LOGO DGETAyCM -->
+    <div class="btn-careers-container d-none d-lg-flex">
+
+      <a href="courses.html" class="btn-getstarted">
         Explorar Carreras
       </a>
 
+
     </div>
-  </header>
+
+    <!-- MOBILE -->
+    <i class="mobile-nav-toggle bi bi-list"></i>
+
+  </div>
+
+</header>
 
   <!-- HERO -->
   <section class="hero">
@@ -630,7 +814,7 @@
 
         <div class="col-lg-6">
 
-          <img src="assets/img/about.jpg" class="about-img" alt="CBTA 235">
+          <img src="assets/img/img1.jpg" class="about-img" alt="CBTA 235">
 
         </div>
 
@@ -701,7 +885,7 @@
 
           <div class="career-box">
 
-            <img src="assets/img/course/agropecuario-1.jpg" alt="Agropecuario">
+            <img src="assets/img/agropecuario.jpg" alt="Agropecuario">
 
             <div class="career-content">
 
@@ -721,7 +905,7 @@
 
           <div class="career-box">
 
-            <img src="assets/img/ofimatica/ofimatica-1.jpg" alt="Ofimática">
+            <img src="assets/img/ofimatica.jpg" alt="Ofimática">
 
             <div class="career-content">
 
@@ -745,7 +929,7 @@
 
             <div class="career-content">
 
-              <h4>Administración Agropecuaria</h4>
+              <h4>Técnico en Administración para el Emprendimiento Agropecuario</h4>
 
               <p>
                 Emprendimiento y administración rural.
@@ -825,57 +1009,17 @@
   </section>
 
   <!-- FOOTER -->
-  <footer class="footer">
+  <footer id="footer" class="footer">
 
-    <div class="container">
+    <div class="container text-center">
 
-      <div class="row gy-4">
+      <p>
+        © <strong class="sitename">C.B.T.A No. 235</strong>
+        - Todos los derechos reservados
+      </p>
 
-        <div class="col-lg-4">
-
-          <h4>C.B.T.A. 235</h4>
-
-          <p>
-            Formación académica y tecnológica para jóvenes.
-          </p>
-
-        </div>
-
-        <div class="col-lg-4">
-
-          <h4>Enlaces</h4>
-
-          <p><a href="index.html">Inicio</a></p>
-          <p><a href="about.html">Conócenos</a></p>
-          <p><a href="courses.html">Oferta Educativa</a></p>
-          <p><a href="contact.html">Contacto</a></p>
-
-        </div>
-
-        <div class="col-lg-4">
-
-          <h4>Síguenos</h4>
-
-          <div class="social-links mt-3">
-
-            <a href="#"><i class="bi bi-facebook"></i></a>
-            <a href="#"><i class="bi bi-instagram"></i></a>
-            <a href="#"><i class="bi bi-youtube"></i></a>
-
-          </div>
-
-        </div>
-
-      </div>
-
-      <hr class="my-4 text-white">
-
-      <div class="text-center">
-
-        <p class="mb-0">
-          © <strong>C.B.T.A. No. 235</strong> - Todos los derechos reservados
-        </p>
-
+      <div class="credits">
+        Diseñado para C.B.T.A No. 235
       </div>
 
     </div>

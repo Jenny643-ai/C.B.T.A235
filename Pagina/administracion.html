@@ -150,26 +150,173 @@
       margin-top: 80px;
     }
 
+    /*====================== LOGOS HEADER ======================*/
+
+.header .container-xl{
+  max-width: 1650px;
+}
+
+.logo-container{
+  display:flex;
+  align-items:center;
+  gap:18px;
+  min-width: 320px;
+}
+
+.header-logo{
+  height:75px;
+  width:auto;
+  object-fit:contain;
+}
+
+.sitename{
+  color:#198754;
+  font-weight:800;
+  font-size:32px;
+  margin:0;
+  white-space:nowrap;
+}
+
+.navmenu{
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.navmenu ul{
+  display:flex;
+  align-items:center;
+  gap:35px;
+  list-style:none;
+  margin:0;
+  padding:0;
+}
+
+.navmenu ul li{
+  position:relative;
+}
+
+.btn-careers-container{
+  display:flex;
+  align-items:center;
+  gap:20px;
+}
+
+.btn-getstarted{
+  background:#198754;
+  color:white;
+  padding:14px 30px;
+  border-radius:50px;
+  text-decoration:none;
+  font-weight:600;
+  transition:.3s;
+  white-space:nowrap;
+}
+
+.dgeta-logo{
+  height:90px;
+  width:auto;
+  object-fit:contain;
+}
+
     /* RESPONSIVE */
 
-    @media(max-width: 991px){
+   @media(max-width:991px) {
+      /*====================== LOGOS HEADER ======================*/
 
-      .hero h1{
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.header-logo {
+  height: 70px;
+  width: auto;
+  object-fit: contain;
+}
+
+.btn-careers-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.dgeta-logo {
+  height: 85px;
+  width: auto;
+  object-fit: contain;
+}
+
+.container-xl {
+  max-width: 1550px;
+}
+.header-logo {
+  height: 45px;
+}
+
+.dgeta-logo {
+  height: 55px;
+}
+
+      .mobile-nav-toggle {
+        display: block;
+      }
+
+      .navmenu {
+        position: fixed;
+        top: 90px;
+        right: -100%;
+        width: 300px;
+        height: auto;
+        background: white;
+        border-radius: 20px;
+        padding: 25px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, .15);
+        transition: .4s;
+      }
+
+      .navmenu.active {
+        right: 20px;
+      }
+
+      .navmenu ul {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+      }
+
+      .dropdown ul {
+        position: static;
+        display: none;
+        width: 100%;
+        margin-top: 10px;
+        box-shadow: none;
+        background: #f5f5f5;
+      }
+
+      .dropdown.active ul {
+        display: flex;
+      }
+
+      .hero {
+        text-align: center;
+      }
+
+      .hero h1 {
         font-size: 42px;
       }
 
-      .hero p{
-        font-size: 17px;
+      .hero p {
+        font-size: 18px;
       }
 
-      .section-box{
-        padding: 30px;
+      .info-section {
+        margin-top: 40px;
       }
 
-      .section-title{
-        font-size: 30px;
+      .section-title {
+        font-size: 32px;
       }
-
     }
 
   </style>
@@ -183,6 +330,11 @@
   <header id="header" class="header d-flex align-items-center sticky-top">
 
     <div class="container-fluid container-xl position-relative d-flex align-items-center">
+
+        <img
+        src="assets/img/favicon.jpg"
+        alt="SEP"
+        class="header-logo">
 
       <a href="index.html" class="logo d-flex align-items-center me-auto">
         <h1 class="sitename">C.B.T.A. 235</h1>
@@ -230,6 +382,12 @@
             </ul>
 
           </li>
+
+           <li>
+      <a href="NuevoIngreso.html">
+        Nuevo Ingreso
+      </a>
+    </li>
 
           <li>
             <a href="trainers.html">Docentes</a>
@@ -556,17 +714,17 @@
 
   <!-- FOOTER -->
 
-  <footer class="footer">
+  <footer id="footer" class="footer">
 
     <div class="container text-center">
 
       <p>
-        © <strong>C.B.T.A. No. 235</strong>
+        © <strong class="sitename">C.B.T.A No. 235</strong>
         - Todos los derechos reservados
       </p>
 
       <div class="credits">
-        Diseñado para C.B.T.A. No. 235
+        Diseñado para C.B.T.A No. 235
       </div>
 
     </div>
